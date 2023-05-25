@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="../css/Login.css">
+
+</head>
+<body>
+<div id="container-form-imagem-login">
+  <img src="../img/InaperLogo.png" id="logo-inaper">
+<form id="formLogin">
+  <div id="container-titulo-login">
+  <p class="TituloLogin"><b>Bem vindo ao <br> <span>INAPER</span></b></p>
+  </div>
+  <div class="container-label-input-login">
+    <label for="input-email" class="label-login" id="label-email">E-mail</label>
+    <input type="email" class="InputsLogin" id="input-email" placeholder="E-mail" onchange="onChangeEmail()"/>
+    <div class="error" id="email-required-error">Email é obrigatório</div>
+    <div class="error" id="email-invalid-error">Email é inválido</div>
+  </div>
+  <div class="container-label-input-login">
+    <label for="input-password" class="label-login" id="label-senha">Senha</label>
+    <input type="password" class="InputsLogin" id="input-password" placeholder="Senha" onchange="onChangePassword()"/>
+    <div class="error" id="password-required-error">Senha é obrigatória</div>
+  </div>
+  <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
+  <a href="../html/cadastro.html">
+  <button type="button" class="solid" id="login-button" disabled="true">Ir</button></a>
+</form>
+</div>
+
+</body>
+
+<script src="../js/validate_login.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src= "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth-compat.js"></script>
+<script src="../js/login-user.js"></script>
+
+</html>
