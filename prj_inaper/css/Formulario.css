@@ -7,7 +7,24 @@
      'opsz' 48
  }
 
- #formLogin {
+ .material-symbols-outlined {
+   background-color: #04c2c8;
+   border-radius: 100%;
+   padding: 5px;
+   margin-left: 30px;
+   margin-top: 30px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+   0 6px 20px 0 rgba(0, 0, 0, 0.1),
+   0 4px 8px 0 rgba(0, 0, 0, 0.1),
+   0 6px 20px 0 rgba(0, 0, 0, 0.1);
+ }
+
+ .material-symbols-outlined:hover {
+   padding: 6px;
+   background-color: #04c2b7;
+ }
+
+ #formCadastro {
    width: 100vw;
    height: 100vh;
    background: #6C7A89;
@@ -15,5 +32,13 @@
    flex-direction: row;
    justify-content: center;
    align-items: center;
+   border-radius: 50px;
+   margin-top: 10px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.0),
+   0 6px 20px 0 rgba(0, 0, 0, 1.0),
+   0 4px 8px 0 rgba(0, 0, 0, 1.0),
+   0 6px 20px 0 rgba(0, 0, 0, 1.0);
  }
+
+
 
