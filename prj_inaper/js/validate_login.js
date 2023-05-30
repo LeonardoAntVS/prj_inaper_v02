@@ -9,39 +9,34 @@ function onChangePassword() {
 }
 
 function toggleEmailErrors() {
-  const email = document.getElementById("input-email").value;
-  if (!email) {
-    document.getElementById("email-required-error").style.display = "block";
-  } else {
-    document.getElementById("email-required-error").style.display = "none";
-  }
+  const email = form.email().value;
 
-  if (validateEmail(email)) {
-    document.getElementById("email-invalid-error").style.display = "none";
-  } else {
-    document.getElementById("email-invalid-error").style.display = "block";
-  }
+  form.emailRequiredError().style.display = email ? "none" : "block" ;
+  
+  form.emailInvalidError().style.display = validateEmail(email) ? "none" : "block";
+
+}
+
+function login() {
+  window.location.href = "../html/Cadastro.html"
 }
 
 function togglePasswordErrors() {
-  const password = document.getElementById("input-password").value;
-  if (!password) {
-    document.getElementById("password-required-error").style.display = "block";
-  } else {
-    document.getElementById("password-required-error").style.display = "none";
-  }
+  const password = form.password().value;
+
+  form.passwordRequiredError().style.display = password ? "none" : "block";
 }
 
 function toggleButtonsDisable() {
   const emailValid = isEmailValid();
-  document.getElementById("recover-password-button").disabled = !emailValid;
+  form.recoverPasswordButton().disabled = !emailValid;
 
   const passwordValid = isPasswordValid();
-  document.getElementById("login-button").disabled = !emailValid || !passwordValid;
+  form.loginButton().disabled = !emailValid || !passwordValid;
 }
 
 function isEmailValid() {
-  const email = document.getElementById("input-email").value;
+  const email = form.email().value;
   if (!email) {
     return false;
   }
@@ -49,7 +44,7 @@ function isEmailValid() {
 }
 
 function isPasswordValid() {
-  const password = document.getElementById("input-password").value;
+  const password = form.password().value;
   if (!password) {
     return false;
   }
@@ -58,4 +53,14 @@ function isPasswordValid() {
 
 function validateEmail(email) {
   return /\S+@\S+\.\S+/.test(email);
+}
+
+const form = {
+  email: () => document.getElementById("input-email"),
+  emailRequiredError: () => document.getElementById("email-required-error"),
+  emailInvalidError: () => document.getElementById("email-invalid-error"),
+  password: () => document.getElementById("input-password"),
+  passwordRequiredError: () => document.getElementById("password-required-error"),
+  recoverPasswordButton: () => document.getElementById("recover-password-button"),
+  loginButton: () => document.getElementById("login-button")
 }
